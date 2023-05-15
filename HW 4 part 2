@@ -1,0 +1,190 @@
+// main.cpp
+// HW4Part2.cpp
+//
+// Created by Yasmine Nazari on 3/1/23.
+//
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+int main()
+{
+    
+    //Varibles
+    int numberOfColors; // Amount of colors users desire
+    char userLightNeed;//Dose the user need light or not
+    char userRemovalNeed; //Dose the user need a sign to be removed
+    float basePrice =0 ;//User price of color based on amount of color
+    float lightPrice =0; //Price after user lights need
+    float subTotal =0; // The whole total from all the eqation
+    
+    // Print title
+    cout<< " \n";
+    cout << "HOMEWORK/CLASSWORK #4 Part 2\n";
+    cout << " \n";
+
+    //Prompt for and input the number of colors
+    cout << "Enter the numer of colors in the sign: ";
+    cin >> numberOfColors;
+
+    //Validate the number of colors
+    
+    if (numberOfColors == 1)
+        
+    {
+        
+        basePrice = 250.0;
+        
+    }
+    
+    else if (numberOfColors == 2)
+        
+    {
+        
+        basePrice = 325.0;
+        
+    }
+    
+    else if (numberOfColors == 3)
+        
+    {
+        
+        basePrice = 450.0;
+        
+    }
+    
+    else if (numberOfColors == 4)
+        
+    {
+        
+        basePrice = 625.0;
+        
+    }
+    
+    else if (numberOfColors >= 5)
+        
+    {
+        
+        basePrice = 850.0;
+        
+    }
+    
+    else
+        
+    {
+        
+        cout<< "Please input a integer value greater than 0 next time.\n";
+        
+        cout << "Enter the numer of colors in the sign: ";
+        
+        cin >> numberOfColors;
+        
+    }
+    
+    //Prompt for and input extra items wanted
+    
+    {
+        
+        cout << "Do you want a lighted sign ? (y or n) " ;
+        
+        cin >> userLightNeed;
+        
+        cout << "Do you need an old sign removed ? (y or n) " ;
+        
+        cin >> userRemovalNeed;
+        
+    }
+    
+    // secound validate number of color
+    
+    if (numberOfColors == 1)
+        
+    {
+        
+        basePrice = 250.0;
+        
+    }
+    
+    else if (numberOfColors == 2)
+        
+    {
+        
+        basePrice = 325.0;
+        
+    }
+    
+    else if (numberOfColors == 3)
+        
+    {
+        
+        basePrice = 450.0;
+        
+    }
+    
+    else if (numberOfColors == 4)
+        
+    {
+        
+        basePrice = 625.0;
+        
+    }
+    
+    else if (numberOfColors >= 5)
+        
+    {
+        
+        basePrice = 850.0;
+        
+    }
+    
+    // Add on the extra cost
+    
+    if ( userLightNeed == 'y')
+        
+    {
+        
+        lightPrice = (basePrice * 0.25) + basePrice;
+        
+    }
+    
+    else if ( userLightNeed == 'n' || userLightNeed == 'N')
+        
+    {
+        
+        lightPrice = basePrice;
+    }
+    
+    if ( userRemovalNeed == 'y' )
+        
+    {
+        
+        subTotal= (lightPrice * 0.10) + basePrice;
+        
+        
+    }
+    
+    else if ( userRemovalNeed == 'n'
+             )
+        
+    {
+        
+        subTotal = lightPrice ;
+        
+    }
+    
+    //Display user result
+    
+    cout << "\n";
+    
+    cout << "The price is: $"<< fixed<<setprecision(2)<<subTotal<<endl;
+    
+    //Display programmer name
+    
+    cout << "\n";
+    
+    cout << "Programmer: Yasmine Summer Nazari \n ";
+    
+    cout << " \n";
+    
+    return 0;
+}
