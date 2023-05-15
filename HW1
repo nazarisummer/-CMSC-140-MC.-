@@ -1,0 +1,18 @@
+// Yasmine Summer Nazari
+#include <iostream>
+using namespace std;
+int main()
+{
+    // Display title.
+cout << "     HOMEWORK/CLASSWORK #1\n";
+    
+    //Display message
+  cout <<"This class is CMSC140 CRN 30384.\n";
+ cout <<"This is my first code assignment.\n";
+cout <<"I must read/study my textbook for this class.\n";
+    
+    //Display name.
+  cout <<"Programmer: Yasmine.S.Nazari\n";
+    
+    return 0;
+}
