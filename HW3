@@ -1,0 +1,47 @@
+// Yasmine Summer Nazari
+#include <iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+int main()
+{
+    
+    //Variables
+    
+    int classwork1, classwork2, quiz1,quiz2,quiz3,totalScore;
+    
+    string name;
+    
+    double averageScore;
+    
+    
+    // Display Title
+    cout << "     HOMEWORK/CLASSWORK #3\n";
+    cout <<"                                                         \n";
+    //Prompt for and input name and 5 score
+    cout << "Enter a student name: ";
+    getline (cin, name);
+    cout << "Enter a Homework/Classwork1 score (0 - 100): ";
+    cin >> classwork1;
+    cout <<"Enter a Homework/Classwork2 score (0 - 100): ";
+    cin>> classwork2;
+    cout<<"Enter a Quiz 1 score (0 - 100): ";
+    cin >>quiz1;
+    cout<<"Enter a Quiz 2 score (0 - 100): ";
+    cin >>quiz2;
+    cout<<"Enter a Quiz 3 score (0 - 100): ";
+    cin >>quiz3;
+    cout <<"                                                             \n";
+    //Calculate total and average
+    totalScore = classwork1 + classwork2 + quiz1 + quiz2 + quiz3;
+    averageScore = totalScore/5.0;
+    //Display the results
+    cout<< name<<":"<<"    Total Score: "<<totalScore<< "     Average Score: "<< fixed << setprecision(2) <<averageScore<<endl;
+    cout <<"                                                         \n";
+    //Display the programmer name
+    cout <<"Programmer: Yasmine Summer Nazari \n";
+   
+    return 0;
+}
+
+
