@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    //Variales
+    string sportFav,foodFav,colorFav,myMajor,myName;
+    
+    sportFav = " Tennis";
+    foodFav = " Chicken tenders ";
+    colorFav = " Green";
+    myMajor = " Computer science";
+    myName = " Yasmine.S.Nazari";
+    //Display the tile
+    cout << "      HOMEWORK/CLASSWORK #2\n";
+    cout << "                               \n";
+   
+    // Display personal info
+       cout << "Favorite sport:"<< sportFav <<endl;        //My favorite sport
+       cout  <<"Favorite food:"<< foodFav << endl;       // My favorite food
+       cout <<"Favorite color:"<< colorFav <<endl;      // My Favorite color
+        cout  << "Major:" << myMajor <<endl;                //My major
+    //Display name
+    cout<<"                                      \n";
+    cout<< "Programmer:"<<myName <<endl;                   //My name
+         
+    
+    
+    return 0;
+}
+
