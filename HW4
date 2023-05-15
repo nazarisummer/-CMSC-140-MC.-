@@ -1,8 +1,5 @@
 //
-// main.cpp
-// HW4Part1.cpp
-//
-// Yasmine Summer Nazari
+// Summer Nazari
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -93,6 +90,6 @@ subtotal = total - saving;     ///Compute the total cost
 }
 ///Output the programmer name
 cout << "   \n";
-cout << "Programmer: Yasmine Summer Nazari \n";
+cout << "Programmer: Summer Nazari \n";
 return 0;
 }
