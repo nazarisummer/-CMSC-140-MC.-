@@ -1,0 +1,45 @@
+//
+//
+// Summer Nazari
+//
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    //Variables used for fun program
+    string funWord; //String that holds user fun name
+    int timeRepeating; //Amount of time the fun words will reapt
+    string programmerName = "Summer Nazari";
+  
+    //Prgoram header
+    cout<<"==============================================\n";
+    cout<<"             FUN Program\n";
+    cout<<"==============================================\n";
+   
+    //Get fun word
+    cout<<" \n";
+    cout<<"Write fun word, that we will display more than once \n";
+    cout<<"FUN WORD: ";
+getline(cin, funWord);
+    
+    //Time reapting fun word
+    cout<<" \n";
+    cout<<"How many times would yoru like fun word to display?\n ";
+    cout<<"Time repeating: ";
+    cin>>timeRepeating;
+    cout<<" \n";
+    
+    for (int i =0; i<timeRepeating;i++)
+    {
+        cout<<funWord<<endl;
+    }
+        //End message
+    cout<<" \n";
+        cout<<"Thanks for using my program \n";
+        cout<<"GoodBye\n";
+        cout<<"Programmer Name: "<<programmerName<<endl;
+    cout<<" \n";
+        return 0;
+    }
