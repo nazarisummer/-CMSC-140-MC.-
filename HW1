@@ -1,4 +1,4 @@
-// Yasmine Summer Nazari
+// Summer Nazari
 #include <iostream>
 using namespace std;
 int main()
@@ -12,7 +12,7 @@ cout << "     HOMEWORK/CLASSWORK #1\n";
 cout <<"I must read/study my textbook for this class.\n";
     
     //Display name.
-  cout <<"Programmer: Yasmine.S.Nazari\n";
+  cout <<"Programmer: Summer Nazari\n";
     
     return 0;
 }
