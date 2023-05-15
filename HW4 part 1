@@ -1,0 +1,99 @@
+//
+// main.cpp
+// HW4Part1.cpp
+//
+// Yasmine Summer Nazari
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+//Varaibles
+ int days; // days of tickets
+double subtotal;      /// amount paid for number of tickets
+double tenPercentOff = 0.10;    ///10% off
+double twentyFivePercentOff = 0.25;     /// 25% off
+double thirthythreePercentOff = 0.33; /// 33% off
+double fortytwoPercentOff = 0.42;     ///42% off
+double pricing = 109;   //price per day
+double total;      //Multiplying days with pricinal
+double saving;     //money saved from percentage off
+// Print title
+cout<< "     HOMEWORK/CLASSWORK #4 PART 1     \n";
+cout<<" \n";
+//Prompt for and input the number of days of tickets sold
+cout<<"How many days of tickets were sold ? ";
+cin>>days;
+///Not a vaild number of days
+if (days <= 0)
+{
+cout << "Tickets sold must be greater than zero "; ///Errorr message
+}
+else if (days == 2)   //Determine the discount
+{
+total = days * pricing; ///Compute the total
+    subtotal = total;       ///Set total to subtotal
+    cout<< "The total cost of the purchase is "<<"$"<<subtotal <<endl; //Output the total cost
+}
+    else if (days == 1)    //Determine the discount
+    {
+    total = days * pricing; ///Compute the total
+    subtotal = total;      ///Set total to subtotal
+    cout<< "The total cost of the purchase is "<<"$"<<subtotal <<endl; //Output the total cost
+    }
+else if ( days == 3)                //Determine the Discount
+    {
+    total = days * pricing;          ///Compute the toal
+    saving = total * tenPercentOff ; ///Compute the unit cost after the discount
+    subtotal = total - saving;        ///Compute the total cost
+    cout<< "The total cost of the purchase is "<<"$"<<setprecision(2)<<fixed<<subtotal <<endl; ///Output the total cost
+        
+}
+    else if (days == 4)         //Determine the Discount
+    {
+        total = days * pricing;          ///Compute the toal
+        saving = total * tenPercentOff ; ///Compute the unit cost after the discount
+        subtotal = total - saving;        ///Compute the total cost
+        cout<< "The total cost of the purchase is "<<"$"<<setprecision(2)<<fixed<<subtotal <<endl; ///Output the total cost
+    }
+else if ( days == 5)       //Determine the Discount
+    {
+    total = days * pricing;          ///Compute the toal
+    saving = total * twentyFivePercentOff; ///Compute the unit cost after the discount
+    subtotal = total - saving;        ///Compute the total cost
+    cout<< "The total cost of the purchase is "<<"$"<<setprecision(2)<<fixed<<subtotal <<endl; ///Output the total cost
+    }
+else if (days == 6)                //Determine the Discount
+{
+total = days * pricing;          ///Compute the toal
+saving = total * twentyFivePercentOff ; ///Compute the unit cost after the discount
+subtotal = total - saving;        ///Compute the total cost
+cout<< "The total cost of the purchase is "<<"$"<<setprecision(2)<<fixed<<subtotal <<endl; ///Output the total cost
+}
+else if (days == 7)     //Determine the Discount
+{
+total = days * pricing; ///Compute the toal
+saving = total * thirthythreePercentOff; ///Compute the unit cost after the discount
+subtotal = total - saving;                ///Compute the total cost
+cout<< "The total cost of the purchase is "<<"$"<<subtotal <<endl; //Output the total cost
+}
+    else if  ( days <= 9 )     //Determine the Discount
+    {
+    total = days * pricing; ///Compute the toal
+    saving = total * thirthythreePercentOff; ///Compute the unit cost after the discount
+    subtotal = total - saving;                ///Compute the total cost
+    cout<< "The total cost of the purchase is "<<"$"<<subtotal <<endl; //Output the total cost
+    }
+else
+{
+total = days * pricing;        ///Compute the toal
+saving = total * fortytwoPercentOff; ///Compute the unit cost after the discount
+subtotal = total - saving;     ///Compute the total cost
+    cout<< "The total cost of the purchase is "<<"$"<<setprecision(2)<<fixed<<subtotal <<endl; ///Output the total cost
+}
+///Output the programmer name
+cout << "   \n";
+cout << "Programmer: Yasmine Summer Nazari \n";
+return 0;
+}
+
