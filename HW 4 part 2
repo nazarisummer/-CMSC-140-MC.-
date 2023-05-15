@@ -1,7 +1,5 @@
-// main.cpp
-// HW4Part2.cpp
 //
-// Created by Yasmine Nazari on 3/1/23.
+// Summer  Nazari 
 //
 #include <iostream>
 #include <iomanip>
@@ -182,7 +180,7 @@ int main()
     
     cout << "\n";
     
-    cout << "Programmer: Yasmine Summer Nazari \n ";
+    cout << "Programmer: Summer Nazari \n ";
     
     cout << " \n";
     
