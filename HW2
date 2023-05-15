@@ -10,7 +10,7 @@ int main()
     foodFav = " Chicken tenders ";
     colorFav = " Green";
     myMajor = " Computer science";
-    myName = " Yasmine.S.Nazari";
+    myName = " Summer Nazari";
     //Display the tile
     cout << "      HOMEWORK/CLASSWORK #2\n";
     cout << "                               \n";
