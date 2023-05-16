@@ -1,5 +1,5 @@
 //
-//Yasmine Summer Nazari
+// Summer Nazari
 //
 
 #include <iostream>
@@ -15,7 +15,7 @@ int main() {
     int userChoice; //Stores user opition
     float num1; //Stores user first number
     float num2; //Stores user first number
-    string programmerName = "Yasmine Summer Nazari"; //String stores programmer name
+    string programmerName = " Summer Nazari"; //String stores programmer name
     
     // Header of code
     cout << "     HOMEWORK/CLASSWORK #6 PART 1\n";
