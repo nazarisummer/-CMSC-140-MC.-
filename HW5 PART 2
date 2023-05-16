@@ -1,4 +1,4 @@
-//Yasmine Summer Nazari
+// Summer Nazari
 #include <iostream>
 #include<iomanip>
 #include <fstream>
@@ -79,7 +79,7 @@ int main() {
         
         // Output programmer name
         cout<<" \n";
-        cout << "Programmer Name: Yasmine Summer Nazari" << endl;
+        cout << "Programmer Name: Summer Nazari" << endl;
         cout<<" \n";
         return 0;
     }
