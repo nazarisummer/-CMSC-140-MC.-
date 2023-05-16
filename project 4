@@ -1,0 +1,106 @@
+/*
+* Class: CMSC140 CRN 30384
+* Instructor: Professor Justh
+* Project<4>
+* Description: Program holds data on compnay employee attendance
+* Due Date: April 16, 2023
+* I pledge that I have completed the programming assignment
+independently.
+ I have not copied the code from a student or any source.
+ I have not given my code to any student.
+ Print your Name here: Yasmine Summer Nazari
+*/
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+using namespace std;
+ofstream output_file; // Value to open file
+ifstream input_file; //Value to infile file
+void numOfEmployees(); //function ask user for number of employees
+void totalDaysAbsent(); //function ask user for Id of each employee and absent
+void  averageAbsent ( int);  //function calcultes average and number of absnets
+int main() {
+    // Open file
+    ofstream output; // Value to open file
+    ifstream input_file; //Value to infile file
+    ofstream inputFile; //value to open and close file
+    inputFile.open("employeeAbsences.txt"); //opening file
+   
+    
+    //Variable
+    int compnayNumOfEmployees; //value hold number of employee
+    string programmerName = "Programmer: Yasmine Summer Nazari\n"; //string holds programmer name
+    string projectNum = "Project 4\n"; //string holds project number
+    string projectDueDate = "Due Date: 04/16/2023 \n"; //string holds project due date
+    
+    //Display header of program
+    cout<< "     EMPLOYEE ABSENCES \n";
+     cout << "\n";
+    cout<< "Calculate  the average number of days a company's employees are absent. \n";
+    cout<< " \n";
+    
+   //Getting Number of values
+    numOfEmployees();
+    cin>>compnayNumOfEmployees;
+    //Validate value
+    while (compnayNumOfEmployees < 1 )
+    {
+        cout<<"Number can't be less than one, try agian\n";
+        numOfEmployees();
+        cin>>compnayNumOfEmployees;
+    }
+    
+    //Loop for input of companites all of user inforamtion
+    for (int i = 1; i <= compnayNumOfEmployees; i++) {
+        totalDaysAbsent();
+    }
+  
+    
+    //End program
+    cout<< " \n";
+    cout<<"Thank you for testing my program\n";
+    cout<< " \n";
+    cout<<programmerName;
+    cout<<projectNum;
+    cout<<projectDueDate;
+    
+    //Finsh Calculation Messages
+    output_file<<" \n";
+    output_file<<" EMPLOYEE ABSENCE REPORT\n";
+    output_file<<" employee id "<<setw(20)<<"days absent \n";
+    averageAbsent (compnayNumOfEmployees);
+    output_file<<" Programmer: Yasmine Summer Nazari\n";
+    output_file.close();
+    return 0;
+}
+void numOfEmployees()
+{
+    cout<<"Please enter the number of employees in your company:  ";
+}
+void totalDaysAbsent()
+{
+    int employeeIdNum;
+          int employessMissedDays;
+          cout<<"Please enter an employee ID: ";
+          cin>>employeeIdNum;
+          cout<<"Please enter the number of days this employee was absent: ";
+          cin>>employessMissedDays;
+    output_file<<setw(8)<<employeeIdNum<<setw(10)<<employessMissedDays;
+    
+}
+
+
+void averageAbsent (int compnayNumOfEmployees  )
+{
+    int employessMissedDays = 0;
+    int totalAbsence=+employessMissedDays;
+    output_file<<"The"<<compnayNumOfEmployees<<"were absent a total of"<<totalAbsence<<"days. ";
+    double absentAverage = static_cast<double>(employessMissedDays) / static_cast<double>(compnayNumOfEmployees);
+    output_file<<"The average number of days absent is "<<absentAverage<<"days.\n";
+}
+
+
+
+
+
