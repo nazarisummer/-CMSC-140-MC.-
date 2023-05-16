@@ -1,0 +1,58 @@
+//
+//
+// Summer  Nazari 
+//
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+//Functions for this code
+void  largerThanN (int array[], int size, int n);
+
+//Main begins
+int main(int argc, const char * argv[]) {
+    
+//Variables for program
+    const string programmerName = " Summer Nazari \n "; //Varaible that holds programmer name
+    int n; //Variable that hold user number
+    int numbers[10] = {30, 20, 50, 2, -1, 44, 3, 12, 90, 32}; //Array used in this program
+    int size = sizeof(numbers) / sizeof(numbers[0]); // Varialbe that caluctes size of array
+    
+//Titile of the code
+   cout << "    HOMEWORK/CLASSWORK #7 \n";
+    cout<<" \n";
+    
+//Get user number
+    cout<< "Enter a number: ";
+    cin>>n;
+    cout<<" \n";
+    
+//Function
+    largerThanN (numbers,  size,  n);
+    cout<<" \n";
+//End code
+    cout<<" \n";
+    cout<< "Programmer: "<<programmerName<<endl;
+    return 0;
+}
+
+//Function that holds statement to get user number
+//Finds numbers that is greater than user number
+//output user greatest number
+void  largerThanN (int array[], int size, int n)
+{
+    
+    cout<<"The number that are larger than "<<n<<" are: ";
+    for (int i = 0; i < size; i++) {
+        if (array[i] > n) {
+            cout << array[i] << " ";
+        
+            
+        }
+    }
+    return;
+}
+
+
