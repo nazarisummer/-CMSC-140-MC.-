@@ -1,0 +1,110 @@
+/* Class: CMSC140 CRN 30384
+* Instructor: Professor Justh
+* Project #1
+* Description: Project 1 program. A program that greets the user and offers the user two number games to a patriciate, in. One of the game users gives a number to the program, and the program tells the user that number in years, sounds, days, months, etc. Next, the game user gives the number, and the program adds and divides in, int, and floats with the user-given number.
+* Due Date: Sunday, February 19, 2023 at 11:59pm
+* I pledge that I have completed the programming assignment
+independently.
+ I have not copied the code from a student or any source.
+ I have not given my code to any student.
+ Print your Name here: Yasmine Summer Nazari
+*/
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+int main()
+{
+// User  sting input variables
+string userName;
+    
+//User int Input Variables and results from arithmetic operators
+int userNumber,productOfYear,proudctMonths, proudctDay,proudctInHours,numberOfMinutes, secound, minute, numberInSecounds,numberInDog,numberInFish,
+ProductNumber, quotientDivisonOne, userNumber1, userNumber2;
+    
+//Constants used for arithmetic operators
+const int NUMNER_IN_MONTHS = 12,NUMBER_OF_DAYS = 30, NUMBER_OF_HOUR = 24, DOG_YEAR = 7, GOLDFISH_YEAR = 5, HUMAN_YEAR = 1,PROJECT_NUMBER = 1;
+minute = secound = 60;
+    
+//Float results from arithmetic operators
+float quotientDivisontwo;
+ 
+//Constants string variable
+const string PROGRAMMER_NAME = "Yasmine Summer Nazari", DUE_DATE = "02/19/23", ROBOT_NAME = "Nao";
+
+    
+// Title of the program
+cout<<"                                                           \n";
+cout<<"               ROBOT SCRIPT                                              \n";
+cout<<"                                                           \n";
+
+//Greeting to user
+cout<<"Hello! I am a robot. My name is "<<ROBOT_NAME <<"."<<endl;
+ 
+//Get user name
+cout<<"May I please have your name? ";
+getline(cin,userName);
+ 
+//Offer user in a game
+cout<<"Nice to have you with us today, "<<userName<<"!"<<endl;
+cout<< "Let me impress you with a small game.\n";
+ 
+//Get user number
+cout<<"Please give me the age of a person or pet. ";
+cin>>userNumber;
+cout<<"                                                           \n";
+ 
+//Calactions with user number
+productOfYear = userNumber * HUMAN_YEAR;
+proudctMonths = userNumber * NUMNER_IN_MONTHS;
+proudctDay = userNumber * NUMBER_OF_DAYS * NUMNER_IN_MONTHS;
+proudctInHours = userNumber * NUMBER_OF_DAYS * NUMNER_IN_MONTHS * NUMBER_OF_HOUR;
+numberOfMinutes = userNumber * NUMBER_OF_DAYS * NUMNER_IN_MONTHS * NUMBER_OF_HOUR * minute;
+numberInSecounds = userNumber * NUMBER_OF_DAYS * NUMNER_IN_MONTHS * NUMBER_OF_HOUR * minute * secound;
+numberInDog = userNumber * DOG_YEAR;
+numberInFish = userNumber * GOLDFISH_YEAR ;
+ 
+//Display user number calactions
+cout<<"You have entered "<< userNumber<<"."<<endl;
+cout<<"If this age is for a person, the age can be expressed as: \n";
+cout<<productOfYear<<" years"<<endl;
+cout<<"or "<<proudctMonths<<" months"<<endl;
+cout<<"or about "<<proudctDay<<" days"<<endl;
+cout<<"or about "<<proudctInHours<<" hours"<<endl;
+cout<<"or about "<<numberOfMinutes<<" minutes"<<endl;
+cout<<"or about "<<numberInSecounds <<" seconds"<<endl;
+cout<<"                                                           \n";
+cout<<"If this age is for a dog, it is "<< numberInDog<< " years old in human age."<<endl;
+cout<<"If this age is for a gold fish, it is "<<numberInFish<<" years old in human age."<<endl;
+cout<<"                                                           \n";
+ 
+//Display an offering of another game and get two whole number from user
+ cout<<"Let's play another game, "<<userName<<"."<<endl;
+
+//Get user number
+cout<<"Please give me a whole number. ";
+cin>>userNumber1;
+cout<<"Very well. Please Give me another whole number. ";
+cin>>userNumber2;
+
+//Game two calaction
+ ProductNumber = userNumber1 * userNumber2;
+ quotientDivisonOne = userNumber1 / userNumber2;
+ quotientDivisontwo = userNumber1/static_cast<double>(userNumber2);
+
+ //Display game two calaction
+ cout<<"Using the operator '*' in C ++, the result of "<< userNumber1<<" * "<< userNumber2<<" is "<<ProductNumber<<endl;
+ cout<< "Using the operator '/', the result of "<<userNumber1 <<" / "<< userNumber2 <<" is "<<quotientDivisonOne<< ";" <<endl;
+ cout<<setprecision(3)<<fixed<<"however, the result of "<< double(userNumber1)<<"/"<<double(userNumber2) <<" is "<<quotientDivisontwo<<"."<<endl;
+cout<<"                                                           \n";
+    
+//Display end message
+cout<< "Thank you for testing my program!\n";
+cout<< "PROGRAMMER:"<< PROGRAMMER_NAME<<endl;
+cout<< "Project "<<PROJECT_NUMBER<<endl;
+cout<< "Due Date:"<<DUE_DATE<<endl;
+ 
+    return 0;
+}
+
+
