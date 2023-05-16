@@ -1,0 +1,213 @@
+/*
+* Class: CMSC140 CRN 30384
+* Instructor: Professor Justh
+* Project 3
+* Description: write a program that calculates the occupancy rate
+ and the total hotel income for one night and displays this
+ information as well as some other information described below.
+* Due Date: 04/02/2023
+* I pledge that I have completed the programming assignment independently.
+ I have not copied the code from a student or any source.
+ I have not given my code to any student.
+ Print your Full Name here:Yasmine Summer Nazari
+ */
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+int main()
+{
+    
+    //Variables
+    string hotelName = "BlueMont Hotel";  //String variable that holds name of hotel
+    string location; //Variable that holds user location
+    int numberFloors; //Variable that holds user number of floors
+    
+    
+    
+    //More variables
+    int roomTotal = 0; //Varaible that holds user number of total floors
+    int numberOfSingle = 0; //Varaible that holds user number of sinngle room
+    int numberOfDouble = 0;   //Variable that hold user number of double room
+    int  numberOfKing = 0; //Variable that hold user number of king room
+    int numberOfSuit = 0;   //Varaible that hold user number of suit room
+    int lessRoom;   //varaible that holds least amount of room
+    int less;  //varaible that holds rest of the rooms
+  
+    
+
+    
+    //End constants
+    const string END_MESSAGE = "Thank you for testing my program!",
+    PROGRAMMER_NAME = "Yasmine Summer Nazari",
+    PROJECT_THREE = "Project 3 ",
+    PROGRAM_DUE_DATE = "04/02/2023";
+    
+    
+    //Banner
+    cout<< "     HOTEL OCCUPANCY AND INCOME \n";
+    cout<<" \n";
+    for(int line = 0; line <= 175; line++ ) //Top line of the banner
+    {
+        cout<<"=";
+    }                     //End of top line code
+    cout<<"\n";
+    cout <<setw(75)<<hotelName << endl;  //Middle of the hotel banner
+    cout<<"\n";
+    for(int line = 0; line <= 175; line++ )  // Bottom line of the banner
+    {
+        cout<<"=";
+        
+    }             //End of bottom line of the banner
+    //Qestion 1
+    cout<<"\n";
+    cout << "Enter the location for this hotel chain: ";
+    getline(cin,location);
+    
+    //Qestion 2
+    cout << "Enter the total number of floors in this hotel: ";
+    cin >> numberFloors;
+    
+    //Error message for  qestion 2
+    while (numberFloors <= 0 || numberFloors > 5)
+    {
+        cout << "Number of floors should be between 1 and 5. Please try again!!\n"<< endl;
+        cout << "Enter the total number of floors in this hotel: ";
+        cin >>numberFloors;
+        
+    }
+    //Qestion loop
+   
+    for (int room = 1; room < numberFloors + 1; room++)
+    {
+       
+        //Qestion 3
+        cout <<"Enter total number of rooms on floor " <<room << " ? ";
+        cin >>roomTotal;
+        //Error message for qestion 3
+        while (roomTotal <= 0 || roomTotal > 30  )
+        {
+            cout << "Number of floors should be between 1 and 30. Please try again!!\n"<< endl;
+            cout<<"\n";
+            cout <<"Enter total number of rooms on floor " <<room << " ? ";
+            cin >>roomTotal;
+        }
+        //Qestion 4
+        cout << "How many SINGLE  rooms are occupied on floor " << room << " ? ";
+        cin >> numberOfSingle;
+        //Qestion 5
+        cout << "How many DOUBLE rooms are occupied on floor " << room  << "? ";
+        cin >> numberOfDouble;
+        //Qestion 6
+        cout << "How many  KING  rooms are occupied on floor "<< room << " ? ";
+        cin >> numberOfKing;
+        //Qestion 7
+        cout << "How many SUITE are occupied on floor "<< room  <<  " ? ";
+        cin >> numberOfSuit;
+        
+        
+        //Room total check
+        int tempTotalRooms = numberOfSingle + numberOfDouble + numberOfSuit + numberOfKing;
+        if  ( tempTotalRooms > roomTotal) {
+                cout << "Total number of occuiped rooms exceeds the total number of rooms on this floor. Please try agian!!\n"<< endl;
+            cout<<"\n";
+            }
+        }
+       
+        //All 4 room rates constants
+        const int SINGLE_RATE = 65,  // Single rate constant
+        DOUBLE_RATE = 80, // Double rate constant
+        KING_RATE = 100,  // Single rate constant
+        SUITE_RATE = 150; // Suite  rate constant
+        
+        //Calculation varaible
+        int singleTotal, //Varaible that hold result after calaction for singles
+        doubleTotal, //Varaible that hold result after calaction for  double
+        kingTotal, //Varaible that hold result after calaction for king
+        suiteTotal, //Varaible that hold result after calaction for suite
+        hotelIncome, //Varaible that hold result after calaction for hotel income
+        occupiedRoom, //Varaible that hold result after calaction for occuiped room
+        unoccuipedRoom, //Varaible that hold result after calaction for unoccuiped room
+        occupancyRate; //Varaible that hold result after calaction for occupancy rate
+        
+        
+        //Rates banner
+        cout<<" \n";
+        for(int line = 0; line <= 175; line++ ) //Top line of rates banner
+        {
+            cout<<"=";
+        }              //Bottom line of rates banner
+        cout<<" \n";
+        cout <<setw(75)<< "BlueMont Hotel located at "<<  location  << endl;
+        for(int line = 0; line <= 175; line++ ) //Top line of rates banner
+        {
+            cout<<"=";
+            
+        }          //Bottm line of rates banner
+        cout<< " \n";
+        cout <<setw(75)<<"TODAY’S ROOM RATES ( US$/night)\n";
+        cout << "       Single Room                     Double Room                     King Room                Suite Room   ";
+        cout<<" \n";
+        cout<<"            65                               80                           100                        150  ";
+        cout<< "\n";
+        for(int line = 0; line <= 175; line++ ) //Top line of rates banner
+        {
+            cout<<"=";
+            
+        }   //End line of rate banner
+        
+        
+        //Calculation 1
+        singleTotal = numberOfSingle * SINGLE_RATE;
+        doubleTotal = numberOfDouble *   DOUBLE_RATE ;
+        kingTotal =  numberOfKing *  KING_RATE ;
+        suiteTotal = numberOfSuit * SUITE_RATE ;
+        hotelIncome = singleTotal + doubleTotal + kingTotal + suiteTotal;
+        cout<<" \n";
+        cout <<setw(30)<< "Hotel Income:"<<setw(15)<<"$"<< hotelIncome <<endl;
+        
+        //Calculation 2
+        cout << setw(30)<<"Total # of rooms:"<<setw(15)<<roomTotal<< endl ;
+        
+        //Calculation 3
+        occupiedRoom = numberOfSingle + numberOfDouble + numberOfKing + numberOfSuit;
+        cout << setw(30)<<"Total # occupied rooms:" <<setw(15)<<occupiedRoom << endl;
+        
+        
+        //Calculation 4
+        unoccuipedRoom = roomTotal - occupiedRoom;
+        cout << setw(30)<<"Total # of uncoccupied Room:" <<setw(15)<<unoccuipedRoom << endl;
+        
+        //Calculation 5
+        occupancyRate = occupiedRoom/roomTotal * 100;
+        cout << setw(30)<<"Occupancy rate:"<< fixed << setprecision(2)<<setw(15)<<occupancyRate << endl;
+        cout<<" \n";
+    
+    //Calculation 6
+    //Display number of floors with the less number of rooms
+    int tempTotalRooms = numberOfSingle + numberOfDouble + numberOfSuit + numberOfKing;
+lessRoom = roomTotal * tempTotalRooms;
+less = tempTotalRooms+ 1;
+cout <<"floor "<< lessRoom << " with " << less << " rooms has the least # of rooms.\n";
+        
+        // Check if occupancy rate is below 60 percent
+        if (occupancyRate < 60)
+        {
+            
+            cout <<"Need to improve Hotel occupancy rate!!\n\n";
+            cout << "" << endl;
+            
+        }
+        
+        // Program outro
+        cout<< " \n";
+        cout << END_MESSAGE<<endl;
+        cout << "PROGRAMMER: "<<PROGRAMMER_NAME<<endl;
+        cout << PROJECT_THREE<<endl;
+        cout << "Due Date: "<< PROGRAM_DUE_DATE<<endl;
+        
+        
+        return 0;
+    }
+
