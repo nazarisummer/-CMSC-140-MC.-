@@ -1,0 +1,77 @@
+//
+//Yasmine Summer Nazari
+//
+
+#include <iostream>
+#include<string>
+using namespace std;
+void getChoice (); //Function  stores message to get user opition
+void displayResult (); //Function stores message to display user results
+void add(float,float); //Function stores calculation to calculate  user result for opition 1
+void displayResult(int,float,float); //Function stores if/else statment for user opitions in code
+void subtract(float,float);//Function stores calculation to calculate  user result for opition 2
+int main() {
+    //Variables for code
+    int userChoice; //Stores user opition
+    float num1; //Stores user first number
+    float num2; //Stores user first number
+    string programmerName = "Yasmine Summer Nazari"; //String stores programmer name
+    
+    // Header of code
+    cout << "     HOMEWORK/CLASSWORK #6 PART 1\n";
+    cout<<" \n";
+    
+    //Getting user choice
+    getChoice ();
+    cin>>userChoice;
+    cout<<" \n";
+    
+    //Getting user 2 number
+    cout <<"Please enter two numbers: ";
+    cin>>num1;
+    cin>>num2;
+    //Displaying user result message
+    displayResult( userChoice,num1,num2);
+    cout<<" \n";
+    
+    //Displaying programmer name
+    cout<< "Programmer:"<<programmerName<<endl;
+    cout<<" \n";
+    return 0;
+}
+
+//Message in void getChoice
+void getChoice ()
+{
+   
+    cout<<"Please enter 1 if you want to add two numbers\n";
+    cout<< "enter 2 if you want to subtract two numbers 2: ";
+}
+
+// Calculation in void add
+void add(float num1, float num2)
+{
+    float result = num1 + num2;
+    cout<<" \n";
+    cout<<"The result is "<<result;
+    cout<<" \n";
+}
+
+// Calculation in void subtract
+void subtract(float num1, float num2)
+{
+    float result = num1 - num2;
+    cout<<" \n";
+    cout<<"The result is "<<result;
+    cout<<" \n";
+}
+//Message in void displayResult
+void displayResult( int userChoice,float num1,float num2  ) {
+  if (userChoice == 1) {
+      add( num1, num2);
+  } else {
+      subtract( num1,  num2);
+  }
+}
+
+
