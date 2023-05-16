@@ -1,0 +1,159 @@
+/*
+ * Class: CMSC140 CRN 30384
+ * Instructor: Professor Justh
+ * Project 2
+ * Computer/Platform/Compiler: XCode
+ * Description: A program that converts measurements in the Imperial System of Measurement and the Metric System of Measurement.
+ * Due Date: 03/05/2023
+ * I pledge that I have completed the programming assignment independently.
+ I have not copied the code from a student or any source.
+ I have not given my code to any student.
+ Print your Full Name here: Yasmine Summer Nazari
+ */
+#include <iostream>
+#include <string>
+#include<iomanip>
+using namespace std;
+int main() {
+ //Variables
+ string userContry; //A variable that holds user contry
+ int  menuChoice; //A variable that holds user choice from menu
+ double userCelsius = 0.0; //A variable that holds user celsius from opition 1
+ double  userDistance = 0.0 ; //A variable that holds user distance from opition 2
+ double  userWeight = 0.0; //A variable that holds user weight from opition 3
+ 
+
+ //End message varable
+ const string GOODBYE_MESSAGE ="Thank you for testing my program! \n"; // Hold program Goodybye message
+ const string PROGRAMMER_NAME ="PROGRAMMER: Yasmine Summer Nazari \n"; // Hold program creator name
+ const string ASSSIGNMENT_NAME ="Project 2 \n"; // Hold program class assginment name
+ const string DUE_DATE_OF_ASSIGNMENT = "03/05/2023 \n"; // Holds program submission date
+
+
+
+
+
+ //Display program header
+ cout << "              METRIC TO IMPERIAL CONVERISONS\n";
+ cout << " \n";
+
+ //Get user country name
+ cout << " \n";
+ cout << " Enter a contry name: ";
+ getline(cin,userContry);
+ cout << " \n";
+
+ //Constants for menu conversion
+ const double multipleForTemperatureConversion = 1.8, // Number use to multiple Celsius to become a temperature. Opition
+ addendForTemperatureConversion = 32, //Number use to add celsous to become a tempture. Opition 1
+ kilometerInMile = 0.62, //Multiple user distance to become a mile distance. opition 2
+ kilogramInPounds = 2.2; //Multiple user distance to become pound. opition 3
+ 
+ //Constants for menu choices
+    const char  temperature_choice = 1,
+    distance_choice = 2,
+     weight_choice = 3,
+  quit_choice = 4;
+
+ //Display menu
+ cout << "\nConverter Toolkit\n" // Menu title
+ <<"------------------------------------------------\n"; //Opition one
+ cout<< "1. Temperature Converter\n" // Option 1
+ << "2. Distance Converter\n" //Option 2
+ << "3. Weight Converter\n" //Option 3
+ << "4. Quit\n"; //Option 4
+
+ //Get user menu choice
+ cout <<" \n";
+ cout << "Enter your choice (1-4): ";
+ cin >> menuChoice;
+
+ //Personalized question for user menu choice
+ if (menuChoice == temperature_choice) //Verifying user option to be one
+ {
+ cout <<"Please enter a temperature in celsius ( 0 - 100): "; //Option one prompt
+ cin >>userCelsius;
+ }
+ else if ( menuChoice == distance_choice) //Verifying user option to be two
+ {
+     cout <<"Please enter a distance in kilometers (such as 18.54): "; //Option two prompt
+     cin >>userDistance;
+     if (userDistance < 0) // Verifying expression for user distance is not a negative .
+     {
+         cout<< "You must enter a number greater than 0, try agian next time.\n"; // Prompt for false expression
+         cout << " \n"; //End message for false expression
+     }
+ }
+ else if ( menuChoice == weight_choice ) //Verifying user option to be three
+ {
+ cout <<"Please enter a weight in kilogram (can't be less than 0): "; //Opition three prompt
+ cin >> userWeight;
+ if ( userWeight < 0) // Verifying expression for user weight is not a negative .
+ {
+ cout <<"Please enter a number that greater than 0, try agian next time \n"; // Prompt for false expression
+ cout << " \n"; //End message for false expression
+     
+ }
+}
+ else if ( menuChoice == quit_choice) //Verifying user option to be four
+ {
+ cout <<"Program ending \n";
+ }
+else if (menuChoice <= 0 || menuChoice > 4) //Invalid numbers for menu
+{
+    cout <<"ERROR \n"; // Prompt for invalid menu number
+    cout <<"Please enter a number from 1 to 4. Try agian, next time. \n";
+    cout <<" \n";
+}
+//Constants for switch statment
+    const int  TEMPEATURE_RESULTS = (userCelsius * multipleForTemperatureConversion) +  addendForTemperatureConversion; //const operation one
+    double DISTANCE_RESULTS = 0.0;
+      double  WEIGHT_RESULTS = 0.0;
+    if ( userDistance > 0 )
+    {
+        DISTANCE_RESULTS = userDistance * kilometerInMile;   //constant operation two
+    }
+    else if ( userWeight > 0 )
+    {
+        WEIGHT_RESULTS = userWeight * kilogramInPounds;    //const operation three
+    }
+    
+ //Doing conversion operation for users
+    switch ( menuChoice)
+ {
+ case 1: //Converision for menu choice one
+ cout <<"It is "<< setprecision (0) << fixed <<TEMPEATURE_RESULTS <<" degrees Fahrenheit. \n"; // Displaying results of conversion one
+ break;
+ case 2: //Converision for menu choice two
+         if ( userDistance > 0 )
+         {
+             cout <<"It is "<<setprecision (2)<< fixed<<DISTANCE_RESULTS << " miles. \n"; // Displaying results of conversion two
+         }
+ break;
+ case 3: //Converision for menu choice three
+            if ( userWeight > 0 )
+         {
+             cout <<"It is "<< setprecision (1) << fixed<< WEIGHT_RESULTS  << " pounds. \n";
+                //const operation three
+         }
+// Displaying results of conversion three
+ break;
+ default:
+ break;
+ }
+    
+
+ //Display friendly message with user country
+ cout<<" \n";
+ cout << userContry << " sounds fun! \n";
+ cout << " \n";
+
+ //End message
+    cout <<GOODBYE_MESSAGE;
+    cout << PROGRAMMER_NAME;
+    cout<< ASSSIGNMENT_NAME;
+    cout <<DUE_DATE_OF_ASSIGNMENT;
+ cout << " \n";
+ return 0;
+}
+
